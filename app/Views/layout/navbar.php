@@ -20,6 +20,7 @@
      </label>
 
      <nav class="main-navigation">
+      <img src="../image/logonav2.png" class="nav-logo2">
        <ul>
          <li><a class="effect-underline" href="/">Home</a></li>
          <li><a class="effect-underline" href="/about">About</a></li>

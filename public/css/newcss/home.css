@@ -1,24 +1,5 @@
 /*! * Bootstrap Grid v4.3.1 (https://getbootstrap.com/) * Copyright 2011-2019 The Bootstrap Authors * Copyright 2011-2019 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 
-html {
-    box-sizing: border-box;
-    -ms-overflow-style: scrollbar
-}
-
-*,
- ::after,
- ::before {
-    box-sizing: inherit
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto
-}
-
 .body-color-12431 {
     background-color: #EE1549;
 }
@@ -5055,8 +5036,6 @@ img.responsive {
 main,
 section,
 .section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     position: relative
 }
 
@@ -5076,15 +5055,6 @@ img.slick-loading,
 }
 
 @media (min-width:576px) {}
-
-@media (min-width:768px) {
-    main,
-    section,
-    .section {
-        padding-top: 4rem;
-        padding-bottom: 4rem
-    }
-}
 
 @media (min-width:992px) {}
 
@@ -8113,12 +8083,9 @@ a.icon-link {
         font-size: 16px
     }
     #home-hero {
-        padding-top: 20vh;
-        max-height: 900px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center
+        height: 100vh;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     #home-hero h1 {
         font-size: 52px

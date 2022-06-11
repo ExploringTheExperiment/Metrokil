@@ -40,9 +40,6 @@
     <script src="<?= base_url('js/jquery.min.js') ?>"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 
-<<<<<<< HEAD
-    <script src="/node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-=======
     <script src="particles.js"></script>
     <script src="app.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
@@ -53,7 +50,6 @@
 
     <script id="tilt" src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js" type="text/javascript" defer></script>
 
->>>>>>> 09255e3dbc83fcbb26cc54b786625d02fc2c409f
 </body>
 
 </html>

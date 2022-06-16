@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ContentModel;
 
 class Home extends BaseController
 {
@@ -20,9 +21,24 @@ class Home extends BaseController
     {
         return view('pages/service');
     }
+    protected $contentModel;
+    public function __construct()
+    {
+        $this->ContentModel = new ContentModel();
+    }
     public function product()
     {
-        return view('pages/product');
+        $content = $this-> ContentModel -> findAll();   
+
+        $context = [
+            'title'=>'HALAMAN DEPAN WEBSITE',
+            'content'=>$content
+        ];
+
+
+        return view('pages/product', $context);
+
+        // return view('pages/product');
     }
     public function news()
     {
@@ -36,4 +52,9 @@ class Home extends BaseController
     {
         return view('pages/searchpage');
     }
+    public function add()
+    {
+        return view('pages/add-content');
+    }
+
 }

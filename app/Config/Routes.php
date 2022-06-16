@@ -39,6 +39,7 @@ $routes->get('/product', 'Home::product');
 $routes->get('/news', 'Home::news');
 $routes->get('/news-details', 'Home::news_details');
 $routes->get('/search', 'Home::search');
+$routes->get('/add', 'Home::add');
 
 /*
  * --------------------------------------------------------------------

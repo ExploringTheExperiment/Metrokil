@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Db extends Migration
+class Db2 extends Migration
 {
     public function up()
     {
@@ -71,7 +71,6 @@ class Db extends Migration
         $this->forge->addKey('id_category', true);
         $this->forge->createTable('category');
     }
-
 
     public function down()
     {

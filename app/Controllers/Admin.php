@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ContentModel;
 
 use App\Controllers\BaseController;
 
@@ -10,4 +11,5 @@ class Admin extends BaseController
     {
         return view('pages-admin/index');
     }
+    
 }

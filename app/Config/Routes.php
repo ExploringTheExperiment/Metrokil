@@ -41,6 +41,8 @@ $routes->get('/news-details', 'Home::news_details');
 $routes->get('/search', 'Home::search');
 $routes->get('/add', 'Home::add');
 
+$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/index', 'Admin::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

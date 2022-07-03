@@ -7802,7 +7802,11 @@ body .uwy.userway_p1 {
     margin-bottom: 1rem
 }
 
-#fyre p,
+#fyre p
+{
+    color: #000;
+}
+#fyre p .description,
 #home-hero p {
     font-size: 16px;
     line-height: 1.6;
@@ -7885,7 +7889,7 @@ body .uwy.userway_p1 {
 
 #home-hero .featured-case-study .case-study-img img {
     width: 100%;
-    height: auto
+    height: auto;
 }
 
 #home-hero .featured-case-study .case-study-content-contain {

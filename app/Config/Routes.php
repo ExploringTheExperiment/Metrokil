@@ -39,7 +39,11 @@ $routes->get('/product', 'Home::product');
 $routes->get('/news', 'Home::news');
 $routes->get('/news-details', 'Home::news_details');
 $routes->get('/search', 'Home::search');
+$routes->get('/showcontent', 'Home::showcontent');
 $routes->get('/add', 'Home::add');
+$routes->get('/edit-content', 'Home::ubah');
+
+$routes->get('/admin', 'Admin::index');
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/index', 'Admin::index');

@@ -5,7 +5,8 @@
           <div class="sidebar-brand-icon rotate-n-15">
               <i class="fas fa-laugh-wink"></i>
           </div>
-          <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+          <div class="sidebar-brand-text mx-3">Metrokil</div>
+          <!-- <sup>2</sup> -->
       </a>
 
       <!-- Divider -->
@@ -13,7 +14,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-          <a class="nav-link">
+          <a class="nav-link" href="/dashboard">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Dashboard</span></a>
       </li>
@@ -49,22 +50,23 @@
 
 
 
-      <!-- Nav Item - Charts -->
+
       <li class="nav-item">
           <a class="nav-link" href="/admin/blog">
               <i class="fas fa-fw fa-chart-area"></i>
-              <span>Form Blog - Berita</span></a>
+              <span>Form Blog</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/admin/contact">
+          <a class="nav-link" href="/admin/category_blog">
               <i class="fas fa-fw fa-chart-area"></i>
-              <span>Form Contact</span></a>
+              <span>Category (Blog)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/admin/index">
+          <a class="nav-link" href="/admin/category_contact">
               <i class="fas fa-fw fa-chart-area"></i>
-              <span>Form Content</span></a>
+              <span>Category (Contact)</span></a>
       </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

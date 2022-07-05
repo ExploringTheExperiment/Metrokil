@@ -37,12 +37,12 @@ class Auth extends AuthConfig
 	 * @var array
 	 */
 	public $views = [
-		'login'		   => 'Myth\Auth\Views\login',
-		'register'		=> 'Myth\Auth\Views\register',
-		'forgot'		  => 'Myth\Auth\Views\forgot',
-		'reset'		   => 'Myth\Auth\Views\reset',
-		'emailForgot'	 => 'Myth\Auth\Views\emails\forgot',
-		'emailActivation' => 'Myth\Auth\Views\emails\activation',
+		'login'		   => 'auth\login',
+		'register'		=> 'auth\register',
+		'forgot'		  => 'auth\forgot',
+		'reset'		   => 'auth\reset',
+		'emailForgot'	 => 'auth\emails\forgot',
+		'emailActivation' => 'auth\emails\activation',
 	];
 
 	/**
@@ -52,7 +52,7 @@ class Auth extends AuthConfig
 	 *
 	 * @var string
 	 */
-	public $viewLayout = 'Myth\Auth\Views\layout';
+	public $viewLayout = 'auth\layout';
 
 	/**
 	 * --------------------------------------------------------------------
@@ -149,7 +149,8 @@ class Auth extends AuthConfig
 	 *
 	 * @var string|null Name of the ActivatorInterface class
 	 */
-	public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+	// public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+	public $requireActivation;
 
 	/**
 	 * --------------------------------------------------------------------

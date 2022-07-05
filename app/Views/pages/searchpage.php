@@ -1,7 +1,7 @@
 <?= $this->extend('layout/page_layout') ?>
 <?= $this->section('content') ?>
 <style>
-    * {
+    body {
         font-family: 'Mulish', sans-serif;
     }
 

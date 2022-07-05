@@ -42,6 +42,7 @@ $routes->get('/search', 'Home::search');
 // $routes->get('/showcontent', 'Home::showcontent');
 $routes->get('/add', 'Home::add');
 $routes->get('/edit-content', 'Home::ubah');
+$routes->get('/list-category', 'Category::index');
 
 $routes->get('/dashboard', 'Admin::index');
 

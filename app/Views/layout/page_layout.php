@@ -19,8 +19,6 @@
 
     <!-- css -->
 
-    <link rel="stylesheet" href="css/newcss/home.css">
-    <link rel="stylesheet" href="css/newcss/animate.css">
     <link rel="icon" href="image/logo.svg" type="image/x-icon">
 
     <!-- script -->
@@ -30,7 +28,7 @@
     
 </head>
 
-<body data-rsssl=1 id="fyre" class="home page-template-default page page-id-2 sample-page essb-7.9" itemscope itemtype="http://schema.org/Organization">
+<body>
 
     <?= $this->include('layout/navbar') ?>
     <?= $this->include('layout/header') ?>

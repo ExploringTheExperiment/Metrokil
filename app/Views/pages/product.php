@@ -49,7 +49,7 @@
             <h1 class="fw-bolder">PRODUCT</h1>
             <p class="fw-lighter fs-6 py-md-2 py-2">Setelah jasa yang kami tawarkan, kami<br>juga menwarkan produk andalan kami.</p>
         </div>
-        <div class="col d-flex justify-content-center">
+        <div class="col d-flex justify-content-end">
             <img src="../image/shopping_Bag.svg">
         </div>
     </div>
@@ -84,6 +84,14 @@
       </div>
     </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
     <div class="carousel-item">
       <div class="cards-wrapper">
         <div class="card">
@@ -141,14 +149,6 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 </div>
 

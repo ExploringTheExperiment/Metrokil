@@ -2,56 +2,50 @@
 
 use PhpParser\Node\Stmt\Echo_;
 ?>
-<?= $this->extend('layout/page_layout') ?>
+<?= $this->extend('layout-admin/page_layout') ?>
 
 <?= $this->section('content') ?>
 
     <section>
         <div class="container px-md-5">
-            <div class="row pt-md-5 pt-5">
-                <div class="col-md-12 py-md-3 pt-3">
-                    <h1>Add Content</h1>
-                </div>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Add New Content</h1>
             </div>
-            
-            <form method="POST" action="<?php echo site_url('Home/kirim'); ?>">
-            
+
+            <?= $validation->listErrors(); ?>
+
+            <form method="post" action="<?php echo site_url('Home/kirim'); ?>" enctype="multipart/form-data">
+            <?= csrf_field(); ?>
                 <div class="form-group">
-                    <label for="jdul">Title</label>
-                    <input type="text" name="title" class="form-control" id="jdul" placeholder="Judul...">
+                    <label for="jdul" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control <?= ($validation->hasError('title')) ? 'is-invalid' : '' ?>" id="jdul" placeholder="Judul..." autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="aut">Author</label>
-                    <input type="text" name="author" class="form-control" id="aut" placeholder="Author...">
+                    <label for="aut" class="form-label">Author</label>
+                    <input type="text" name="author" class="form-control" id="aut" placeholder="Author..." autofocus >
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                    <label for="tgl">Tanggal</label>
-                    <input type="date" name="date_posted" class="form-control" id="tgl">
-                    </div>
-                    <div class="form-group col-md-6">
-                    <label for="gmbr">Gambar</label>
-                    <input type="file" name="picture" class="form-control" id="gmbr" placeholder="Gambar">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="text">Text</label>
-                    <textarea class="form-control" name="text" id="text" rows="3"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                    <label for="inputState">Category</label>
-                    <input type="text" name="category" class="form-control" id="inputState">
+                    <label for="inputState" class="form-label">Category</label>
+                    <input type="text" name="category" class="form-control" id="inputState" autofocus>
                     <!-- <select id="inputState" name="category" class="form-control">
                         <option selected>Choose...</option>
                         <option>...</option>
                     </select> -->
                     </div>
-                    <div class="form-group col-md-2">
-                    <label for="inputZip">Slug</label>
-                    <input type="text" name="slug" class="form-control" id="inputZip">
+                    <div class="form-group col-md-4">
+                        <label for="gmbr" class="form-label">Picture</label>
+                        <div class="custom-file">
+                            <label for="gmbr" class="custom-file-label">Upload Picture File</label>
+                            <input type="file" name="picture" class="form-control <?= ($validation->hasError('picture')) ? 'is-invalid' : '' ?>" id="gmbr" autofocus>
+                        </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="text" class="form-label">Text</label>
+                    <textarea class="form-control" name="text" id="text" rows="3" autofocus></textarea>
+                </div>
+               
                 <button type="submit" class="btn btn-primary" >Add </button>
                 </form>
 

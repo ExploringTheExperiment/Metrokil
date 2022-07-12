@@ -23,9 +23,6 @@ class Db2 extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'date_posted' => [
-                'type'       => 'DATE',
-            ],
             'picture' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -41,6 +38,9 @@ class Db2 extends Migration
             'category' => [
                 'type'       => 'INT',
                 'constraint' => '100',
+            ],
+            'created_at' => [
+                'type'       => 'DATE',
             ],
 
         ]);

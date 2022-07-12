@@ -37,7 +37,6 @@ class Home extends BaseController
         $content = $this-> ContentModel -> findAll();   
 
         $context = [
-            'title'=>'HALAMAN DEPAN WEBSITE',
             'content'=>$content
         ];
 
@@ -46,30 +45,55 @@ class Home extends BaseController
 
     public function add()
     {
-        return view('pages/add-content');
+        // session();
+        $data = [
+            'validation' => \Config\Services::validation() 
+        ];
+        return view('pages/add-content', $data);
     }
 
     public function kirim()
     {   
-        $title= $this->request->getVar('title');
-        $author = $this->request->getVar('author');
-        $date = $this->request->getVar('date_posted');
-        $img = $this->request->getVar('picture');
-        $txt = $this->request->getVar('text');
-        $cat = $this->request->getVar('category');
-        $slug = $this->request->getVar('slug');
- 
-        $data = [
-            'title' => $title,
-            'author' => $author,
-            'date_posted' => $date,
-            'picture' => $img,
-            'text' => $txt,
-            'category' => $cat,
-            'slug' => $slug,            
-            ];
+        #validasi input
+        if (!$this->validate([
+            'title' => [
+                'rules' => 'required[title]|is_unique[content.title]',
+                'errors' => [
+                    'required' => '{field} harus diisi.',
+                    'is_unique' => '{field} judul content sudah ada, ganti judul lain.'
+                ]
+                ],
+            'picture' => [
+                'rules' => 'uploaded[picture]|is_image[picture]',
+                'errors' => [
+                    'uploaded' => 'Pilih Gambar terlebih dahulu',
+                    'is_image' => 'Pilihlah File dengan format png, jpg, dan jpeg',
+                    
+                ]
+            ]
+        ])) {
+            // $validation = \Config\Services::validation(); 
+            // return redirect()->to('pages/add-content')->withInput()->with('validation', $validation);
+            return redirect()->to('/add')->withInput();
+        }
 
-        $this -> ContentModel ->save($data);
+        #ambil gambar
+        $filePicture = $this->request->getFile('picture');
+        $namaPicture = $filePicture->getName();
+        $filePicture->move('img/', $namaPicture);
+        
+        $slugjudul = url_title($this->request->getVar('title'),'-',true);
+        $this->ContentModel->save([
+            'title' => $this->request->getVar('title'),
+            'author' => $this->request->getVar('author'),
+            'picture' => $namaPicture,
+            'date_posted' => $this->request->getVar('date_posted'),
+            'text' => $this->request->getVar('text'),
+            'category' => $this->request->getVar('category'),
+            'slug' => $slugjudul
+        ]);
+
+        session()->setFlashdata('pesan', 'Berhasil ditambahkan');
         return redirect()->to('/showcontent');
     }
 
@@ -78,7 +102,6 @@ class Home extends BaseController
         $data['content'] = $this->ContentModel->getContent($id);
 
         return view('pages/content-edit', $data);
-  
     }
  
     public function update()

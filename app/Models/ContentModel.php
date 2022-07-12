@@ -7,9 +7,9 @@ use CodeIgniter\Model;
 class ContentModel extends Model 
 {
     protected $table = 'content';
-    protected $useTimestamps = false;
+    protected $useTimestamps = True;
     protected $primaryKey = 'id_content';
-    protected $allowedFields = ['title', 'author', 'date_posted', 'image', 'text', 'category', 'slug'];
+    protected $allowedFields = ['title', 'author', 'picture', 'text', 'category', 'slug'];
 
     public function getContent($id = false)
     {

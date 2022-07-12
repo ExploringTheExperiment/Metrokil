@@ -1,4 +1,4 @@
-<?= $this->extend('layout/page_layout') ?>
+<?= $this->extend('layout-admin/page_layout') ?>
 
 <?= $this->section('content') ?>
 <style>
@@ -22,23 +22,31 @@
     <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Author</th>
-      <th scope="col">Date Posted</th>
-      <th scope="col">Picture</th>
-      <th scope="col">Text</th>
-      <th scope="col">Category</th>
-      <th scope="col">Slug</th>
+      <th scope="col">Name</th>
+      <th scope="col">Code</th>
+      <th scope="col">Description</th>
       <th scope="col">D & E</th>
     </tr>
     </thead>
     <tbody>
-        
-        
+    <?php 
+        $no = 1;
+        foreach ($category as $c ) : ?>
+            <tr>
+            <th scope="row"><?= $no++; ?>.</th>
+            <td><?= $c['name'] ?></td>
+            <td><?= $c['code'] ?></td>
+            <td><?= $c['desc_category'] ?></td>
+            <td>
+                <a  href="<?php echo base_url('/ContentCategory/ubahCategory/' . $c['id_category']); ?>">Edit</a>&nbsp;
+                <a  href="<?php echo base_url('/ContentCategory/deleteCategory/' . $c['id_category']); ?>">Delete</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
         
     </tbody>
     </table>
-    <a href="/add" class="button">Add Content</a>
+    <a href="/add-category" class="button">Add Category</a>
     </div>
 </div>
 

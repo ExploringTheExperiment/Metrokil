@@ -47,14 +47,20 @@
       <div class="sidebar-heading">
           Addons
       </div>
-
-
-
-
+      <li class="nav-item">
+          <a class="nav-link" href="/add">
+              <i class="fas fa-fw fa-chart-area"></i>
+              <span>Form Content</span></a>
+      </li>
       <li class="nav-item">
           <a class="nav-link" href="/admin/blog">
               <i class="fas fa-fw fa-chart-area"></i>
               <span>Form Blog</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/list-category">
+              <i class="fas fa-fw fa-chart-area"></i>
+              <span>Category (Content)</span></a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="/admin/category_blog">

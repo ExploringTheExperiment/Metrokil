@@ -46,6 +46,8 @@ $routes->get('/list-category', 'ContentCategory::index');
 $routes->get('/add-category', 'ContentCategory::addCategory');
 $routes->get('/edit-category', 'ContentCategory::ubahCategory');
 
+#admin------------------------------------------------------#admin
+
 $routes->get('/admin/blog', 'Blog::index');
 
 $routes->get('/admin/category_blog', 'BlogCategory::index');

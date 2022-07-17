@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\ContentModel;
+use App\Models\CategoryModel;
+use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
 {
@@ -28,13 +30,15 @@ class Home extends BaseController
 
     #list konten dari db
     protected $contentModel;
+    protected $categoryModel;
     public function __construct()
     {
         $this->ContentModel = new ContentModel();
+        $this->CategoryModel = new CategoryModel();
     }
     public function showcontent()
     {
-        $content = $this-> ContentModel -> findAll();   
+        $content = $this-> ContentModel -> findAll();  
 
         $context = [
             'content'=>$content
@@ -46,9 +50,13 @@ class Home extends BaseController
     public function add()
     {
         // session();
+        $model = new CategoryModel();
+        $category = $model->findAll();
         $data = [
-            'validation' => \Config\Services::validation() 
+            'category' => $category,
+            'validation'=> \Config\Services::validation()
         ];
+
         return view('pages/add-content', $data);
     }
 
@@ -63,20 +71,19 @@ class Home extends BaseController
                     'is_unique' => '{field} judul content sudah ada, ganti judul lain.'
                 ]
                 ],
-            'picture' => [
-                'rules' => 'uploaded[picture]|is_image[picture]',
-                'errors' => [
-                    'uploaded' => 'Pilih Gambar terlebih dahulu',
-                    'is_image' => 'Pilihlah File dengan format png, jpg, dan jpeg',
+            // 'picture' => [
+            //     'rules' => 'uploaded[picture]|is_image[picture]',
+            //     'errors' => [
+            //         'uploaded' => 'Pilih Gambar terlebih dahulu',
+            //         'is_image' => 'Pilihlah File dengan format png, jpg, dan jpeg',
                     
-                ]
-            ]
+            //     ]
+            // ]
         ])) {
             // $validation = \Config\Services::validation(); 
             // return redirect()->to('pages/add-content')->withInput()->with('validation', $validation);
             return redirect()->to('/add')->withInput();
         }
-
         #ambil gambar
         $filePicture = $this->request->getFile('picture');
         $namaPicture = $filePicture->getName();
@@ -87,7 +94,7 @@ class Home extends BaseController
             'title' => $this->request->getVar('title'),
             'author' => $this->request->getVar('author'),
             'picture' => $namaPicture,
-            'date_posted' => $this->request->getVar('date_posted'),
+            'created_at' => Time::now(),
             'text' => $this->request->getVar('text'),
             'category' => $this->request->getVar('category'),
             'slug' => $slugjudul
@@ -109,7 +116,7 @@ class Home extends BaseController
         $id = $this->request->getVar('id_content');
         $title= $this->request->getVar('title');
         $author = $this->request->getVar('author');
-        $date = $this->request->getVar('date_posted');
+        $date = Time::now();
         $img = $this->request->getVar('picture');
         $txt = $this->request->getVar('text');
         $cat = $this->request->getVar('category');
@@ -119,7 +126,7 @@ class Home extends BaseController
             'id_content' => $id,
             'title' => $title,
             'author' => $author,
-            'date_posted' => $date,
+            'created_at' => $date,
             'picture' => $img,
             'text' => $txt,
             'category' => $cat,

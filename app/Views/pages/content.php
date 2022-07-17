@@ -46,7 +46,7 @@
             <th scope="row"><?= $no++; ?>.</th>
             <td><?= $c['title'] ?></td>
             <td><?= $c['author'] ?></td>
-            <td><?= $c['date_posted'] ?></td>
+            <td><?= $c['created_at'] ?></td>
             <td>
                 <img src="/img/<?= $c['picture']; ?>" alt="Image">
             </td>
@@ -58,8 +58,6 @@
             </td>
         </tr>
         <?php endforeach; ?>
-        
-        
     </tbody>
     </table>
     

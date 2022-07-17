@@ -9,6 +9,7 @@ class CategoryModel extends Model
     protected $table = 'category';
     protected $useTimestamps = false;
     protected $primaryKey = 'id_category';
+    protected $returnType = 'array';
     protected $allowedFields = ['name', 'code', 'desc_category'];
 
     public function getCategory($id = false)

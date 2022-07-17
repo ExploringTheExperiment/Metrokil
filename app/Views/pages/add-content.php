@@ -26,18 +26,20 @@ use PhpParser\Node\Stmt\Echo_;
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                    <label for="inputState" class="form-label">Category</label>
-                    <input type="text" name="category" class="form-control" id="inputState" autofocus>
-                    <!-- <select id="inputState" name="category" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select> -->
+                    <label for="category" class="form-label">Category</label>
+                    <!-- <input type="text" name="id_category" class="form-control" id="inputState" autofocus> -->
+                    <select name="category" id="category" class="form-control">
+                        <option hidden>Choose...</option>
+                        <?php foreach ($category as $key => $value) : ?>
+                            <option value="<?=$value['id_category']?>"><?=$value['name']?></option>
+                        <?php endforeach; ?>
+                    </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="gmbr" class="form-label">Picture</label>
                         <div class="custom-file">
                             <label for="gmbr" class="custom-file-label">Upload Picture File</label>
-                            <input type="file" name="picture" class="form-control <?= ($validation->hasError('picture')) ? 'is-invalid' : '' ?>" id="gmbr" autofocus>
+                            <input type="file" name="picture" class="form-control" id="gmbr" autofocus>
                         </div>
                     </div>
                 </div>

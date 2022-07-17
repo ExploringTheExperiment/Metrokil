@@ -22,30 +22,24 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>id_cc_category</th>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Code</th>
-                            <th>Util</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>id_cc_category</th>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Util</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>
-                                <a href="/contactcategory/show" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">Edit</a>
-                                <a href="/blogcategory/destroy" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">Delete</a>
-                            </td>contactcategory
-                        </tr>
+                        <?php foreach ($cc_category as $cc ) : ?>
+                            <tr>
+                                <th scope="row"><?= $cc['id_cc_category'] ?></th>
+                                <td><?= $cc['name'] ?></td>
+                                <td><?= $cc['code'] ?></td>
+                                <td>
+                                    <a class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm" href="<?php echo base_url('/Home/ubah/' . $cc['id_cc_category']); ?>">Edit</a>
+                                    <a class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" href="<?php echo base_url(); ?>/Home/delete/<?php echo $cc['id_cc_category']; ?>">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

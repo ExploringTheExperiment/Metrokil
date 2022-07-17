@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Db2 extends Migration
+class Dbcontent extends Migration
 {
     public function up()
     {
@@ -36,45 +36,27 @@ class Db2 extends Migration
                 'constraint' => '255',
             ],
             'category' => [
-                'type'       => 'INT',
-                'constraint' => '100',
+                'type'       => 'BIGINT',
+                'constraint' => '10',
+                'unsigned'   => true,
             ],
             'created_at' => [
-                'type'       => 'DATE',
+                'type'       => 'DATETIME',
+                'null'       => true,
+            ],
+            'updated_at' => [
+                'type'       => 'DATETIME',
+                'null'       => true,
             ],
 
         ]);
         $this->forge->addKey('id_content', true);
+        $this->forge->addForeignKey('category','category','id_category','CASCADE','CASCADE');
         $this->forge->createTable('content');
-
-        $this->forge->addField([
-            'id_category' => [
-                'type'           => 'INT',
-                'constraint'     => 10,
-                'unsigned'       => true,
-                'auto_increment' => true,
-            ],
-            'name' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'code' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'desc_category' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-        ]);
-        $this->forge->addKey('id_category', true);
-        $this->forge->createTable('category');
     }
 
     public function down()
     {
         $this->forge->dropTable('content');
-        $this->forge->dropTable('category');
     }
 }

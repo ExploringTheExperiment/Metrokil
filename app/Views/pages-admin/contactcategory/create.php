@@ -14,16 +14,15 @@
 
     <div class="row">
         <div class="col-lg-5">
-            <form>
+            <form method="POST" action="<?php echo site_url('ContactCategory/store'); ?>">
+            <?= csrf_field(); ?>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
                 </div>
-
-
                 <div class="mb-3">
                     <label for="code" class="form-label">Code</label>
-                    <input type="text" class="form-control" id="code" name="code">
+                    <input type="text" class="form-control" id="code" aria-describedby="code" name="code">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

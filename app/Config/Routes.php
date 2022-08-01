@@ -40,17 +40,15 @@ $routes->get('/news', 'Home::news');
 $routes->get('/news-details', 'Home::news_details');
 $routes->get('/search', 'Home::search');
 $routes->get('/showcontent', 'Home::showcontent');
-$routes->get('/add', 'Home::add');
 $routes->get('/edit-content', 'Home::ubah');
-$routes->get('/list-category', 'ContentCategory::index');
-$routes->get('/add-category', 'ContentCategory::addCategory');
-$routes->get('/edit-category', 'ContentCategory::ubahCategory');
+
 
 #admin------------------------------------------------------#admin
 
-$routes->get('/admin/blog', 'Blog::index');
-
-$routes->get('/admin/category_blog', 'BlogCategory::index');
+$routes->get('/admin/content', 'Blog::index');
+$routes->get('/admin/add-content', 'Home::add');
+$routes->get('/admin/category_content', 'ContentCategory::index');
+$routes->get('/admin/edit-category', 'ContentCategory::ubahCategory');
 
 $routes->get('/admin/category_contact', 'ContactCategory::index');
 

@@ -18,12 +18,12 @@ class ContentCategory extends BaseController
             'category'=>$category
         ];
 
-        return view('pages/category/list-category.php', $context);
+        return view('pages-admin/contentcategory/list-category.php', $context);
     }
 
     public function addCategory()
     {
-        return view('pages/category/add-category.php');
+        return view('pages-admin/contentcategory/add-category.php');
     }
 
     public function kirimCategory()
@@ -39,14 +39,14 @@ class ContentCategory extends BaseController
             ];
 
         $this -> CategoryModel ->save($data);
-        return redirect()->to('/list-category');
+        return redirect()->to('/admin/category_content');
     }
 
     public function ubahCategory($id)
     {
         $data['category'] = $this->CategoryModel->getCategory($id);
 
-        return view('pages/category/edit-category.php', $data);
+        return view('pages-admin/contentcategory/edit-category.php', $data);
   
     }
 
@@ -65,14 +65,14 @@ class ContentCategory extends BaseController
         ];
         
         $this -> CategoryModel ->save($data);
-        return redirect()->to('/list-category');
+        return redirect()->to('/admin/category_content');
     }
 
     public function deleteCategory($id = null)
     {
         $model = new CategoryModel();
         $data['category'] = $model->where('id_category', $id)->delete();
-        return redirect()->to( '/list-category' );
+        return redirect()->to( '/admin/category_content' );
     }
 
 

@@ -48,24 +48,14 @@
           Addons
       </div>
       <li class="nav-item">
-          <a class="nav-link" href="/add">
+          <a class="nav-link" href="/admin/add-content">
               <i class="fas fa-fw fa-chart-area"></i>
               <span>Form Content</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/admin/blog">
-              <i class="fas fa-fw fa-chart-area"></i>
-              <span>Form Blog</span></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/list-category">
+          <a class="nav-link" href="/admin/category_content">
               <i class="fas fa-fw fa-chart-area"></i>
               <span>Category (Content)</span></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/admin/category_blog">
-              <i class="fas fa-fw fa-chart-area"></i>
-              <span>Category (Blog)</span></a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="/admin/category_contact">

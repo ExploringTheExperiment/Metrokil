@@ -37,7 +37,7 @@ class Dbcontent extends Migration
             ],
             'category' => [
                 'type'       => 'BIGINT',
-                'constraint' => '10',
+                'constraint' => 10,
                 'unsigned'   => true,
             ],
             'created_at' => [

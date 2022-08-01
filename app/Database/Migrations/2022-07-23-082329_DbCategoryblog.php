@@ -4,16 +4,15 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Dbcategory extends Migration
+class DbCategoryblog extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_category' => [
+            'id_blog_category' => [
                 'type'           => 'BIGINT',
-                'constraint'     => 10,
+                'constraint'     => '10',
                 'unsigned'       => true,
-                'auto_increment' => true,
             ],
             'name' => [
                 'type'       => 'VARCHAR',
@@ -23,18 +22,15 @@ class Dbcategory extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'desc_category' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
 
         ]);
-        $this->forge->addKey('id_category', true);
-        $this->forge->createTable('category');
+        $this->forge->addKey('id_blog_category', true);
+        $this->forge->createTable('category_blog');
     }
 
     public function down()
     {
-        $this->forge->dropTable('category');
+        $this->forge->dropTable('category_blog');
     }
 }
+

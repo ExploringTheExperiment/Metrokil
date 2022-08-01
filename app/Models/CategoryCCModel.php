@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class CategoryCCModel extends Model 
 {
     protected $table = 'category_cc';
-    protected $useTimestamps = True;
+    protected $useTimestamps = False;
     protected $primaryKey = 'id_cc_category';
     protected $allowedFields = ['name', 'code'];
 

@@ -225,7 +225,7 @@
 
 <body>
     <div class="page">
-        <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="/css/newcss/button.css">
         <!-- Navigation-->
         <span class="d-none-126412 d-lg-1294717">
             <img src="/image/gambar.jpg" class="navbar-12822">
